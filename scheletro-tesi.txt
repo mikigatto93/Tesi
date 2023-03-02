@@ -1,0 +1,46 @@
+1) Introduzione
+  - Concetti chiave
+    (per questo posso parzialmente citare il materiale che mi ha mandato il Prof. De Leoni all'inizio).
+    parlare del process mining in generale: cos'è, cosa serve, obiettivi generali;
+    parlare di cosa sono i business processes;
+    parlare del perchè è importante fare analisi dei business processes (e dei tipi di analisi?);
+    
+  - Concetti specifici relativi allo stage
+    parlare più nello specifico dell'analisi prescrittiva e dei recommender systems, di cosa sono le spiegazioni e del perchè    
+    sono importanti, soprattuto in un sistema che punta a fornire raccomandazioni (da citare anche il paper del Dott. Padella).
+  
+  - Struttura tesi/convenzioni tipografiche
+
+2) Descrizione dello stage
+   - Scopo
+   - Obiettivi
+   - Piano di lavoro
+
+3) Tecnologie utilizzate
+    - Panoramica tecnologie usate (IDE, Github, etc.)
+    - Analisi framework
+    - Motivazioni scelta framework
+
+4) Analisi dei requisiti
+
+5) Progettazione e codifica
+    - Architettura scelta e motivazioni
+    - Presentazione UML e funzione della varie classi
+    - Funzionamento del framework Dash (più in dettaglio rispetto a quello fatto nell'analisi, con esempi di codice) + utilizzo 
+      di componenti esterni (non nella "libreria standard" di Dash)
+    - Funzionamento del multi-utente
+    - Presentazione delle varie "pagine" dell'app (con una screenshot) e le loro funzionalità 
+
+6) Verifica e validazione
+    - Approccio ai test e librerie usate
+
+7) Conclusioni
+    - raggiungimento obiettivi/requisiti
+    - Conoscenze acquisite
+    - miglioramenti/ottimizzazioni, criticità e sviluppi futuri
+    - valutazione personale
+
+Glossario
+
+Bibliografia
+

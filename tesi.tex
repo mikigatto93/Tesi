@@ -8,16 +8,7 @@
         %%******************************************%%
 
 
-% I seguenti commenti speciali impostano:
-% 1. 
-% 2. PDFLaTeX come motore di composizione;
-% 3. tesi.tex come documento principale;
-% 4. il controllo ortografico italiano per l'editor.
 
-% !TEX encoding = UTF-8
-% !TEX TS-program = pdflatex
-% !TEX root = tesi.tex
-% !TEX spellcheck = it-IT
 
 % PDF/A filecontents
 \RequirePackage{filecontents}
@@ -107,7 +98,7 @@
                                         % 3. eseguire: makeindex -s tesi.ist -t tesi.alg -o tesi.acr tesi.acn
                                         % 4. compilare due volte tesi.tex.
 
-\usepackage[backend=biber,style=verbose-ibid,hyperref,backref]{biblatex}
+\usepackage[backend=biber,style=numeric,hyperref,backref]{biblatex}
                                         % eccellente pacchetto per la bibliografia; 
                                         % produce uno stile di citazione autore-anno; 
                                         % lo stile "numeric-comp" produce riferimenti numerici
@@ -115,6 +106,11 @@
                                         % 1. compilare una prima volta tesi.tex;
                                         % 2. eseguire: biber tesi
                                         % 3. compilare ancora tesi.tex.
+
+\usepackage{enumitem}                   % per cambiare i bullet delle liste
+
+\setlist[itemize]{label=\textbullet}    % imposto il default per i bullet delle liste
+
 
 \input{tesi-config}                     % file con le impostazioni personali
 
