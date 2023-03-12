@@ -98,7 +98,7 @@
                                         % 3. eseguire: makeindex -s tesi.ist -t tesi.alg -o tesi.acr tesi.acn
                                         % 4. compilare due volte tesi.tex.
 
-\usepackage[backend=biber,style=numeric,hyperref,backref, maxnames=10]{biblatex}
+\usepackage[backend=biber, style=numeric, hyperref, backref]{biblatex}
                                         % eccellente pacchetto per la bibliografia; 
                                         % produce uno stile di citazione autore-anno; 
                                         % lo stile "numeric-comp" produce riferimenti numerici
@@ -106,6 +106,8 @@
                                         % 1. compilare una prima volta tesi.tex;
                                         % 2. eseguire: biber tesi
                                         % 3. compilare ancora tesi.tex.
+
+\usepackage{notoccite}
 
 \usepackage{float}						% per l'opzione nelle immagini che permette
 										% di posizionarle nel testo 
@@ -119,7 +121,6 @@
 										% occupare tutta la pagina
 
 
-
 \input{tesi-config}                     % file con le impostazioni personali
 
 \begin{document}
@@ -129,9 +130,9 @@
 \frontmatter
 \input{inizio-fine/frontespizio}
 \input{inizio-fine/colophon}
-\input{inizio-fine/dedica}
-\input{inizio-fine/sommario}
-\input{inizio-fine/ringraziamenti}
+%\input{inizio-fine/dedica}
+%\input{inizio-fine/sommario}
+%\input{inizio-fine/ringraziamenti}
 \input{inizio-fine/indici}
 \cleardoublepage
 
@@ -140,14 +141,14 @@
 %**************************************************************
 \mainmatter
 \input{capitoli/capitolo-1}             % Introduzione
-\input{capitoli/capitolo-2}             % Processi
-\input{capitoli/capitolo-3}             % Kick-Off
-\input{capitoli/capitolo-4}             % Concept Preview
-\input{capitoli/capitolo-5}             % Product Prototype
-\input{capitoli/capitolo-6}             % Product Design Freeze e SOP
-\input{capitoli/capitolo-7}             % Conclusioni
-\appendix                               
-\input{capitoli/capitolo-A}             % Appendice A
+\input{capitoli/capitolo-2}             
+\input{capitoli/capitolo-3}             
+\input{capitoli/capitolo-4}             
+%\input{capitoli/capitolo-5}             
+%\input{capitoli/capitolo-6}             
+%\input{capitoli/capitolo-7}             % Conclusioni
+%\appendix                               
+%\input{capitoli/capitolo-A}             % Appendice A
 
 %**************************************************************
 % Materiale finale
@@ -155,5 +156,9 @@
 \backmatter
 \printglossary[type=\acronymtype, title=Acronimi e abbreviazioni, toctitle=Acronimi e abbreviazioni]
 \printglossary[type=main, title=Glossario, toctitle=Glossario]
+
+%\let\oldaddcontentsline\addcontentsline% Store \addcontentsline
+%\renewcommand{\addcontentsline}[3]{}% Make \addcontentsline a no-op
 \input{inizio-fine/bibliografia}
+%\let\addcontentsline\oldaddcontentsline% Restore \addcontentsline
 \end{document}
