@@ -4,14 +4,15 @@
 
 %**************************************************************
 \chapter{Descrizione dello stage}
+\label{cap2}
 \section{Scopo dello stage}
 L'idea dello stage nasce dalla necessità di sviluppare una nuova interfaccia grafica front-end per un sistema di raccomandazione per le istanze di processi aziendali.
 \\
 Il back-end del sistema è stato precedentemente sviluppato dal dottorando Alessandro Padella, come parte del suo lavoro di tesi di dottorato (\cite{paper-padella}). 
 \\
-Il sistema implementa l'analisi prescrittiva, che ha lo scopo di suggerire le migliori opzioni di decisione nell'ambito dei processi aziendali, traendo vantaggio dal futuro predetto tramite grandi quantità di dati. Per fare questo vengono sfruttati, in particolare, i risultati dell'analisi predittiva, algoritmi di ottimizzazione e intelligenza artificiale. Per individuare le opzioni migliori verrà usato il \gls{KPI} (es. tempo di esecuzione, costi, soddisfazione cliente ecc.), facendo attenzione alla spiegazione di ogni raccomandazione, ovvero mostrando quelli che sarebbero i miglioramenti al \gls{KPI} scelto per ogni decisione.
-
-Lo scopo sarà quindi di sviluppare l'interfaccia grafica per il sistema, che si occupi di tutte le fasi necessarie: 
+Il back-end è un PAR (vedasi \autoref{subsec:par-ref}) che implementa l'analisi prescrittiva, e ha lo scopo di raccomandare le migliori opzioni di decisione nell'ambito dei processi aziendali. Per fare questo vengono sfruttati, in particolare, i risultati dell'analisi predittiva, algoritmi di ottimizzazione e intelligenza artificiale. Le opzioni vengono individuate in termini di KPI (tempo totale di esecuzione e numero di volte in cui una specifica attività si verifica). Infine il sistema genera anche le spiegazioni (sotto forma di Shapley Values) per le raccomandazioni individuate.
+\\
+Lo scopo sarà quindi di sviluppare un'interfaccia grafica per il sistema, che si occupi di tutte le fasi necessarie: 
 \begin{itemize}
 \item caricamento dell'event log storico su cui allenare il modello;
 \item selezione delle opzioni relative all'allenamento del modello desiderate dell'utente;

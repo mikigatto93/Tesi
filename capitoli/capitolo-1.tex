@@ -24,20 +24,23 @@
 \subsection{Processi di business e process mining}
 "Il \textbf{processo aziendale} (o business process) è un insieme di attività interrelate, svolte all'interno dell'azienda nell'ambito della gestione operativa delle sue funzioni aziendali, che creano valore trasformando delle risorse (input del processo) in un prodotto finale (output del processo) a valore aggiunto, destinato ad un soggetto interno o esterno all'azienda (cliente)" \cite{site:wiki-business-process}.
 \\ 
-Un processo è quindi caratterizzato da una sequenza di passi (attività) con lo scopo di raggiungere un obiettivo. \'E importante notare come le varie sequenze sono spesso standardizzate, di conseguenza di avranno, per la maggior parte, esecuzioni simili.
+Un processo è quindi caratterizzato da una sequenza di eventi, ad ognuno dei quali è associata un'attività, le sequenze di eventi sono denominate "tracce". \'E importante notare come le tracce siano spesso standardizzate, di conseguenza si avranno, per la maggior parte, esecuzioni simili.
 \\ 
 A loro volta i processi di business sono la fonte di informazione per il process mining. 
 \\
 "Il \textbf{process mining} è una tecnica di process management, che permette l'analisi dei processi di business basati sui log degli eventi." \cite{site:wiki-process-mining}
 \\
 Il process mining quindi offre varie tecniche per estrarre informazioni utili dai log degli eventi. 
-\subsubsection{Log degli eventi}
-In generale un sistema informativo (che può essere un database o un ERP) genera dati realtivi agli eventi avvenuti in forma di log, tipicamente per registrare e tracciare i cambiamenti avvenuti allo stato del sistema.
-Spesso questi dati sono organizzati in forma tabulare e prendono la forma di un log di eventi.
-Un log di eventi (o \textit{event log}) quindi, è una collezione di dati relativi ad eventi registrata e tracciata da un sistema informativo e conservata in file strutturati (es. CSV, XES, ecc.).
-Si parla di \textbf{traccia} quando ci si riferisce ad un insieme di eventi con lo stesso case id, quindi un event log può essere visto anche come una collezione di tracce.
 
-Rappresenta l'impronta digitale elettronica delle varie operazioni aziendali. 
+
+
+\subsubsection{Log degli eventi}
+In generale un sistema informativo (che può essere un database o un \gls{ERP}) genera dati relativi agli eventi avvenuti in forma di log, tipicamente per registrare e tracciare i cambiamenti avvenuti allo stato del sistema.
+Rappresenta infatti l'impronta digitale elettronica delle varie operazioni aziendali.
+Spesso questi dati sono organizzati in forma tabulare e prendono la forma di un log di eventi.
+Un log di eventi (o \textit{event log}) quindi, è una collezione di dati relativi ad eventi registrata e tracciata da un sistema informativo e conservata in file strutturati (per esempio CSV, XES, ecc.).
+Si parla di \textbf{traccia} quando ci si riferisce ad un insieme di eventi con lo stesso case id, quindi un event log può essere visto anche come una collezione di tracce.
+\\ 
 Va osservato che, in generale, un log non è mai direttamente utilizzabile, può infatti contenere gap, inconsistenze e ripetizioni. Si ritiene quindi necessario delle operazioni di preparazione, che permettono di filtrare e pulire i dati.
 
 \begin{figure}[H] 
@@ -53,8 +56,8 @@ Un evento (osservando la figura \ref{fig:event-log-img}) è rappresentato da una
 \item l'attività eseguita;
 \item il riferimento temporale (\textit{timestamp}).
 \end{itemize}
-Importante notare come, i campi appena elencati, siano essenziali per descrivere un processo e necessari per rendere un event log utilizzabile in attività di process mining.
-Ma un evento può contenere anche altre informazioni aggiuntive (es. risorse, costi, ecc.), queste non sono strettamente necessarie per modellare un processo ma sono comunque utili per effettuare analisi su prospettive diverse.
+Importante notare come, i campi appena elencati, siano essenziali per descrivere un processo e necessari per rendere un event log utilizzabile.
+Un evento può contenere anche altre informazioni aggiuntive (ad esempio risorse, costi, ecc.), queste non sono strettamente necessarie per modellare un processo ma sono comunque utili per effettuare analisi su prospettive diverse.
 
 \subsubsection{Tecniche di process mining}
 Le tecniche di process mining si occupano principalmente di:
@@ -72,7 +75,7 @@ Le tecniche di process mining si occupano principalmente di:
     \caption{3 tipi di attività nel process mining, con relativi input e output \cite{site:process-mining-techniques-img}}
 \end{figure}
 
-Le tecniche appena descritte hanno il potenziale di generale un grande valore aggiunto. La creazione di un modello che descrive i processi rende l'individuazione di processi ripetitivi e inefficienti più semplice, permettendo di agire su di essi. Il modello a sua volta può continuamente essere affinato con informazioni aggiuntive che permettono di analizzare le performance e costruire workflow più efficienti. Lo stesso modello può poi essere comparato con event log successivi per individuare deviazioni, mostrando dove, quando e perché accadono. 
+La creazione di un modello che descrive i processi rende l'individuazione di processi ripetitivi e inefficienti più semplice, permettendo di agire su di essi. Il modello a sua volta può continuamente essere affinato con informazioni aggiuntive che permettono di analizzare le performance e costruire workflow più efficienti. Lo stesso modello può poi essere comparato con event log successivi per individuare deviazioni, mostrando dove, quando e perché accadono. 
 \\
 Ovviamente, oltre a individuare i problemi e i punti deboli ottimizzabili, il process mining permette anche di scovarli in maniera precoce.
 \\
@@ -85,7 +88,7 @@ Il \textit{Predictive Process Monitoring} rientra tra le attività di Enhancemen
 Generalmente si è interessati a fare predizioni sul tempo totale di esecuzione, sulle attività successive o sui risultato finale del processo.
 \\
 Questo permette di ottimizzare le operazioni di business, riducendo i costi e i rischi. Inoltre rende la pianificazione in materia di allocazione delle risorse disponibili più semplice ed efficiente.
-Importante è anche i benefici relativi alla soddisfazione del cliente: posso fare predizioni relative alle aspettative dei clienti o prevedere il risultato finale di un processo, offrendo tempi di attesa più certi. 
+Importante è anche i benefici relativi alla soddisfazione del cliente: si possono fare predizioni relative alle aspettative dei clienti o prevedere il risultato finale di un processo, offrendo tempi di attesa più certi. 
 \\
 Come osservato in \cite{pm-handbook}, in generale il Predictive Process Monitoring è svolto in due fasi:
 \begin{itemize}
@@ -95,15 +98,16 @@ Come osservato in \cite{pm-handbook}, in generale il Predictive Process Monitori
 
 \subsection{Prescriptive Process Monitoring}
 Va osservata la differenze tra predizione, ovvero un'affermazione che spiega ciò che, probabilmente, avverrà (o meno) in futuro e una raccomandazione, ovvero un'affermazione che spiega quale sia la miglior azione da scegliere.
-Lo scopo finale del Predictive Process Monitoring è infatti, quello di offrire una predizione relativa all'ottenimento di un risultato positivo, ma non dice niente in relazione a quale sia l'azione successiva migliore da effettuare.
+Lo scopo finale del Predictive Process Monitoring è infatti, quello di offrire una predizione relativa all'ottenimento di un risultato positivo, ma non fornisce informazioni in relazione a quale sia l'azione successiva migliore da effettuare.
 \\
 Il Prescriptive Process Monitoring si pone questo obiettivo, supportando e offrendo raccomandazioni agli stakeholder per prevenire risultati indesiderati o per determinare quali sono le migliori attività da eseguire per ottimizzare determinati aspetti di interesse \cite{pm-handbook}.
 
 
 \subsection{Sistema di raccomandazione per istanze di processi aziendali}
-Un sistema di raccomandazione per istanze di processi aziendali, o PAR, è una tipologia di sistema informativo che ha lo scopo di prevedere come le istanze di processi andranno ad evolversi e raccomandare le azioni necessarie per correggere le istanze con il rischio più alto di non raggiungere il risultato desiderato, definito in termini di \gls{KPI} \cite{paper-padella}.
+\label{subsec:par-ref}
+Un \textit{process-aware recommender system}\cite{paper-padella}, o PAR, è una tipologia di sistema informativo che ha lo scopo di prevedere come le istanze di processi andranno ad evolversi e raccomandare le azioni necessarie per correggere le istanze con il rischio più alto di non raggiungere il risultato desiderato, definito in termini di \textit{Key Performance Indicators} o KPI, ovvero un'insieme di misure quantificabili che un'azienda utilizza per valutare le sue prestazioni nel tempo (per esempio ricavi, soddisfazione del cliente, tempi di esecuzioni dei processi ecc.).
 \\
-Un sistema PAR (come descritto in \cite{paper-padella}) è composto da due sotto-sistemi: il Predictive Process Monitoring che si occupa di generare le predizioni e il Prescriptive Process Monitoring che genera le raccomandazioni relative alle azioni correttive da applicare.
+PAR (come descritto in \cite{paper-padella}) è composto da due sotto-sistemi: il Predictive Process Monitoring che si occupa di generare le predizioni e il Prescriptive Process Monitoring che genera le raccomandazioni relative alle azioni correttive da applicare.
 \\
 Sempre in \cite{paper-padella} viene fatta un'importante osservazione: le raccomandazioni, se non correttamente spiegate, spingono l'utente a diffidare di esse, aumentando il rischio che queste non vengano applicate, dato che i responsabili preferiranno prendere decisioni soggettive non fidandosi del sistema.
 \\
@@ -113,8 +117,13 @@ Le spiegazioni del sistema proposto in \cite{paper-padella} si basano su caratte
 
 
 \subsubsection{Shapley Values}
-Gli Shapley Values nascono nell'ambito della teoria dei giochi, e rappresentano un approccio per suddividere equamente la ricompensa tra i giocatori che hanno collaborato in un gioco cooperativo \cite{site:wiki-shapley-values}. Servono quindi per quantificare la contribuzione che ogni giocatore ha portato al gioco stesso. In \cite{paper-padella} viene spiegato come le caratteristiche di un istanza di processo corrispondano ai giocatori, e la differenza tra la predizione fatta dal modello predittivo e la predizione media è la ricompensa. Quindi il valore di Shapley di una caratteristica di una predizione rappresenta quanto essa contribuisce a variare la predizione del modello da quella media.
+Gli Shapley Values nascono nell'ambito della teoria dei giochi, e rappresentano un approccio per suddividere equamente la ricompensa tra i giocatori che hanno collaborato in un gioco cooperativo \cite{paper-padella}. Servono quindi per quantificare la contribuzione che ogni giocatore ha portato al gioco stesso. In \cite{paper-padella} viene spiegato come le caratteristiche di un istanza di processo corrispondano ai giocatori, e la differenza tra la predizione fatta dal modello predittivo e la predizione media è la ricompensa. Quindi il valore di Shapley di una caratteristica di una predizione rappresenta quanto essa contribuisce a variare la predizione del modello da quella media.
 
 \section{Struttura del resto della relazione}
-%TODO
+\subparagraph{\hyperref[cap2]{Il secondo capitolo} descrive lo stage, gli scopi, l'organizzazione e gli obiettivi.}
+
+\subparagraph{\hyperref[cap3]{Il terzo capitolo} descrive le varie tecnologie utilizzate, in particolare il framework, proponendo un'analisi comparativa tra i due framework considerati.}
+
+\subparagraph{\hyperref[cap4]{Il quarto capitolo} approfondisce l'analisi dei requisiti del progetto.}
+
 

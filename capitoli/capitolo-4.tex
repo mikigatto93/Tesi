@@ -4,13 +4,20 @@
 
 %**************************************************************
 \chapter{Analisi dei requisiti}
+\label{cap4}
 %**************************************************************
+ 
 
-\section{Casi d'uso}
+\section{Analisi dei casi d'uso}
 
-Per lo studio dei casi d'uso del sistema sono stati creati dei diagrammi.
+Per lo studio dei casi d'uso sono stati creati dei diagrammi.
 I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{UML} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
 
+\subsubsection{Attori individuati}
+L'unico attore individuato è l'utente generico. Il sistema infatti non include nessun meccanismo di registrazione e login. L'idea iniziale, in accordo con il committente, era che il sistema fosse operato da un solo utente, il quale si occupa anche di installare ed eseguire il back-end in una propria macchina. 
+\\
+Successivamente è stato introdotto l'obiettivo (non obbligatorio ma desiderabile) di rendere il sistema multiutente. Ma resta comunque la necessità per un'eventuale collettività di utenti, interessata ad utilizzare il sistema, di installare ed eseguire il back-end in una propria macchina.
+\clearpage
 
 %% -------------------------
 %% --- TRAINING PHASE ------
@@ -128,10 +135,10 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 	\item \textbf{Descrizione:} L'utente deve poter dichiarare quali colonne sono relative a quali features del dataset caricato.
 	\item \textbf{Scenario principale:} 
 		\begin{enumerate}
-			\item L'utente dichiara la colonna relativa alla feature "id column" (\textbf{UC 6.1.1});
+			\item L'utente dichiara la colonna relativa alla feature "id" (\textbf{UC 6.1.1});
 			\item L'utente dichiara la colonna relativa alla feature "activity" (\textbf{UC 6.1.2});
 			\item L'utente dichiara la colonna relativa alla feature "timestamp" (\textbf{UC 6.1.3});
-			\item L'utente dichiara la colonna relativa alla feature "resurce name" (\textbf{UC 6.1.4}).
+			\item L'utente dichiara la colonna relativa alla feature "resurce" (\textbf{UC 6.1.4}).
 		\end{enumerate}
 	
 	\item \textbf{Precondizioni:} L'event log in formato CSV o XLS è stato caricato correttamente (\textbf{UC 2}, \textbf{UC 4});
@@ -144,17 +151,17 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
     \caption{Casi d'uso relativi alla dichiarazione delle colonne}
 \end{figure}
 
-\subsubsection{UC 6.1.1 - Dichiarazione della colonna relativa alla feature "id column"}
+\subsubsection{UC 6.1.1 - Dichiarazione della colonna relativa alla feature "id"}
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente generico;
-	\item \textbf{Descrizione:} L'utente deve poter selezionare la colonna corrispondente alla feature "id column".
+	\item \textbf{Descrizione:} L'utente deve poter selezionare la colonna corrispondente alla feature "id".
 	\item \textbf{Scenario principale:} 
 		\begin{enumerate}
-			\item L'utente seleziona il campo relativo alla feature "id column";
-			\item L'utente dichiara la colonna relativa alla feature "id column".
+			\item L'utente seleziona il campo relativo alla feature "id";
+			\item L'utente dichiara la colonna relativa alla feature "id".
 		\end{enumerate}
 	\item \textbf{Precondizioni:} L'event log in formato CSV o XLS è stato caricato correttamente (\textbf{UC 2}, \textbf{UC 4});
-	\item \textbf{Postcondizioni:} La colonna relativa alla feature "id column" è stata dichiarata.
+	\item \textbf{Postcondizioni:} La colonna relativa alla feature "id" è stata dichiarata.
 \end{itemize}
 
 
@@ -184,17 +191,17 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 	\item \textbf{Postcondizioni:} La colonna relativa alla feature "timestamp" è stata dichiarata.
 \end{itemize}
 
-\subsubsection{UC 6.1.4 - Dichiarazione della colonna relativa alla feature "resource name"}
+\subsubsection{UC 6.1.4 - Dichiarazione della colonna relativa alla feature "resource"}
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente generico;
-	\item \textbf{Descrizione:} L'utente deve poter selezionare la colonna corrispondente alla feature "resource name".
+	\item \textbf{Descrizione:} L'utente deve poter selezionare la colonna corrispondente alla feature "resource".
 	\item \textbf{Scenario principale:} 
 		\begin{enumerate}
-			\item L'utente seleziona il campo relativo alla feature "resource name";
-			\item L'utente dichiara la colonna relativa alla feature "resource name".
+			\item L'utente seleziona il campo relativo alla feature "resource";
+			\item L'utente dichiara la colonna relativa alla feature "resource".
 		\end{enumerate}
 	\item \textbf{Precondizioni:}  L'event log in formato CSV o XLS è stato caricato correttamente (\textbf{UC 2}, \textbf{UC 4});
-	\item \textbf{Postcondizioni:} La colonna relativa alla feature "resource name" è stata dichiarata.
+	\item \textbf{Postcondizioni:} La colonna relativa alla feature "resource" è stata dichiarata.
 \end{itemize}
 
 
@@ -204,7 +211,7 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 	\item \textbf{Descrizione:} L'utente deve poter selezionare il KPI che desidera tra quelli disponibili;
 	\item \textbf{Scenario principale:} L'utente seleziona il KPI tra:
 		\begin{itemize}
-			\item "Total execution time" (\textbf{UC 6.2.1});
+			\item "Total time" (\textbf{UC 6.2.1});
 			\item "Minimize activity occurence" (\textbf{UC 6.2.2});
 			%\item "Maximize activity occurence" (\textbf{UC 5.1.3});
 			%\item "Cost" (\textbf{UC 5.3});
@@ -219,14 +226,14 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
     \caption{Casi d'uso relativi alla selezione del KPI}
 \end{figure}
 
-\subsubsection{UC 6.2.1 - Selezione KPI "Total execution time"}
+\subsubsection{UC 6.2.1 - Selezione KPI "Total time"}
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente generico;
-	\item \textbf{Descrizione:} L'utente deve poter selezionare il KPI "Total execution time";
-	\item \textbf{Scenario principale:} L'utente seleziona il KPI "Total execution time";
+	\item \textbf{Descrizione:} L'utente deve poter selezionare il KPI "Total time";
+	\item \textbf{Scenario principale:} L'utente seleziona il KPI "Total time";
 			
 	\item \textbf{Precondizioni:} Il file di training è stato caricato correttamente (\textbf{UC 1});
-	\item \textbf{Postcondizioni:} Il KPI "Total execution time" è stato selezionato.
+	\item \textbf{Postcondizioni:} Il KPI "Total time" è stato selezionato.
 \end{itemize}
 
 %\subsubsection{UC 5.1.2 - Selezione KPI "Maximize activity occurence"}
@@ -553,13 +560,13 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
     \caption{Caso d'uso relativo alla visualizzazione delle spiegazioni}
 \end{figure}
 
-\subsubsection{UC 17 - Visualizzazione spiegazioni raccomandazione per la singola attività}
+\subsubsection{UC 17 - Visualizzazione spiegazioni singola raccomandazione}
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente generico;
 	\item \textbf{Descrizione:} L'utente deve poter visualizzare le spiegazioni per ogni raccomandazione di una singola traccia
 	\item \textbf{Scenario principale:} 
 		\begin{enumerate}
-			\item L'utente seleziona la traccia a cui è interessato;
+			\item L'utente seleziona la traccia a cui è interessato (\textbf{UC 15}, \textbf{UC 16});
 			\item L'utente seleziona la raccomandazione di cui vuole visualizzare la spiegazione (\textbf{UC 17.1});
 			\item L'utente seleziona la quantità di variabili che vuole visualizzare nella spiegazione(\textbf{UC 17.2});
 			\item L'utente visualizza la spiegazione in formato grafico (\textbf{UC 17.3}); 
@@ -604,7 +611,7 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 	\item \textbf{Postcondizioni:} Il sistema ha registrato la quantità di spiegazione che l'utente è interessato a visualizzare
 \end{itemize}
 
-\subsubsection{UC 17.3 - Visualizzazione spiegazioni in formato grafico}
+\subsubsection{UC 17.3 - Visualizzazione spiegazione in formato grafico}
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente generico;
 	\item \textbf{Descrizione:} L'utente deve poter visualizzare un grafico che rappresenta le singole variazioni relative alle variabili da spiegare;
@@ -675,29 +682,31 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 	\item \textbf{Postcondizioni:} L'utente può procedere all'inserimento dell'event log per la generazione delle raccomandazioni con il modello caricato.
 \end{itemize}
 
-
+\clearpage
 \section{Tracciamento dei requisiti}
+Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case. 
+\\
+Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.
+\\
+Il codice dei requisiti è così strutturato: 
+\\
+\centerline{\textbf{R[Tipologia][Classificazione]-[Identificativo]}}
+
+\begin{itemize}
+	\item \textbf{Tipologia}:
+	\begin{itemize}
+		\item \textbf{F}: Funzionale;
+		\item \textbf{NF}; Non funzionale;
+	\end{itemize}
+	\item \textbf{Classificazione}:
+	\begin{itemize}
+		\item \textbf{O}: Obbligatorio;
+		\item \textbf{F}: Facoltativo;
+	\end{itemize}
+	\item \textbf{Identificativo}: codice univoco incrementale per ogni requisito con valore iniziale pari ad 1.
+\end{itemize}
 
 
-%\begin{figure}[!h] 
-%    \centering 
-%    \includegraphics[width=0.9\columnwidth]{usecase/scenario-principale} 
-%    \caption{Use Case - UC0: Scenario principale}
-%\end{figure}
-%
-%\begin{usecase}{0}{Scenario principale}
-%\usecaseactors{Sviluppatore applicativi}
-%\usecasepre{Lo sviluppatore è entrato nel plug-in di simulazione all'interno dell'IDE}
-%\usecasedesc{La finestra di simulazione mette a disposizione i comandi per configurare, registrare o eseguire un test}
-%\usecasepost{Il sistema è pronto per permettere una nuova interazione}
-%\label{uc:scenario-principale}
-%\end{usecase}
-%
-%\section{Tracciamento dei requisiti}
-%
-%Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
-%Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
-%Il codice dei requisiti è così strutturato R(F/Q/V)(N/D/O) dove:
 %\begin{enumerate}
 %	\item[R =] requisito
 %    \item[F =] funzionale
@@ -710,39 +719,120 @@ I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi d
 %Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.
 
 %\newpage
-%
-%\begin{table}%
+
+%\begin{table}
 %\caption{Tabella del tracciamento dei requisti funzionali}
 %\label{tab:requisiti-funzionali}
-%\begin{tabularx}{\textwidth}{lXl}
-%\hline\hline
-%\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-%\hline
-%RFN-1     & L'interfaccia permette di configurare il tipo di sonde del test & UC1 \\
-%\hline
-%\end{tabularx}
-%\end{table}%
-%
-%\begin{table}%
-%\caption{Tabella del tracciamento dei requisiti qualitativi}
-%\label{tab:requisiti-qualitativi}
-%\begin{tabularx}{\textwidth}{lXl}
-%\hline\hline
-%\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-%\hline
-%RQD-1    & Le prestazioni del simulatore hardware deve garantire la giusta esecuzione dei test e non la generazione di falsi negativi & - \\
-%\hline
-%\end{tabularx}
-%\end{table}%
-%
-%\begin{table}%
-%\caption{Tabella del tracciamento dei requisiti di vincolo}
-%\label{tab:requisiti-vincolo}
-%\begin{tabularx}{\textwidth}{lXl}
-%\hline\hline
-%\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-%\hline
-%RVO-1    & La libreria per l'esecuzione dei test automatici deve essere riutilizzabile & - \\
-%\hline
-%\end{tabularx}
-%\end{table}%
+\begin{longtable}{cp{8cm}ll}
+\hline
+\hline
+\textbf{Requisito} & \textbf{Descrizione} &  \textbf{Rilevanza} & \textbf{Fonte}\\
+\hline
+RF1 & L'interfaccia permette all'utente di caricare un event log per il processo di training & Obbligatorio & UC1 \\
+\hline
+RF2 & L'interfaccia permette all'utente di caricare un event log per il processo di training in formato CSV & Obbligatorio & UC2 \\
+\hline
+RF3 & L'interfaccia permette all'utente di caricare un event log per il processo di training in formato XES & Obbligatorio & UC3 \\
+\hline
+RF4 & L'interfaccia permette all'utente di caricare un event log per il processo di training in formato XLS & Obbligatorio & UC4 \\
+\hline
+RF5 & L'interfaccia visualizza un'errore se l'utente carica un event log con formato sono supportato & Obbligatorio & UC5 \\
+\hline
+RF6 & L'interfaccia permette all'utente di avviare il processo di training & Obbligatorio & UC6 \\
+\hline
+RF6.1 & Se il formato dell'event log per il training caricato è CSV o XLS, L'interfaccia permette all'utente di dichiarare le colonne relative alle features necessarie & Obbligatorio & UC6.1 \\
+\hline 
+RF6.1.1 & L'interfaccia permette all'utente di dichiarare la colonna relativa alla feature "ID" & Obbligatorio & UC6.1.1 \\
+\hline
+RF6.1.2 & L'interfaccia permette all'utente di dichiarare la colonna relativa alla feature "Activity" & Obbligatorio & UC6.1.2 \\
+\hline
+RF6.1.3 & L'interfaccia permette all'utente di dichiarare la colonna relativa alla feature "Timestamp" & Obbligatorio & UC6.1.3 \\
+\hline
+RF6.1.4 & L'interfaccia permette all'utente di dichiarare la colonna relativa alla feature "Resource" & Obbligatorio & UC6.1.4 \\
+\hline
+RF6.2 & L'interfaccia permette all'utente di selezionare il KPI a cui è interessato & Obbligatorio & UC6.2 \\
+\hline
+RF6.2.1 & L'interfaccia permette all'utente di selezionare il KPI "Total time" & Obbligatorio & UC6.2.1 \\
+\hline
+RF6.2.2 & L'interfaccia permette all'utente di selezionare il KPI "Minimize activity occurrence" & Obbligatorio & UC6.2.2 \\
+\hline
+RF6.2.2.1 & Se il KPI "Minimize activity occurrence" è stato selezionato, l'interfaccia permette all'utente di dichiarare l'attività che vuole ottimizzare & Obbligatorio & UC6.2.2.1 \\
+\hline
+RF6.3 & L'interfaccia permette all'utente di selezionare la soglia di frequenza degli outliers & Obbligatorio & UC6.3 \\
+\hline
+RF6.4 & L'interfaccia permette all'utente di visualizzare il progresso del processo di training & Obbligatorio & UC6.4 \\
+\hline
+RF7 & L'interfaccia visualizza un errore se l'utente non inserisce almeno una delle caratteristiche essenziali per il processo di training & Obbligatorio & UC7 \\
+\hline
+RF8 & L'interfaccia permette all'utente di effettuare il download dei file del process model generato dal processo di training & Obbligatorio & UC8 \\
+\hline
+RF9 & L'interfaccia permette all'utente di caricare l'event log per il processo di generazione delle raccomandazioni & Obbligatorio & UC9 \\
+\hline
+RF10 & L'interfaccia permette all'utente di caricare l'event log per il processo di generazione delle raccomandazioni in formato CSV & Obbligatorio & UC10 \\
+\hline
+RF11 & L'interfaccia permette all'utente di caricare l'event log per il processo di generazione delle raccomandazioni in formato XES & Obbligatorio & UC11 \\
+\hline
+RF12 & L'interfaccia permette all'utente di caricare l'event log per il processo di generazione delle raccomandazioni in formato XLS & Obbligatorio & UC12 \\
+\hline
+RF13 & L'interfaccia permette all'utente di avviare il processo di generazione delle raccomandazioni & Obbligatorio & UC13 \\
+\hline
+RF13 & L'interfaccia permette all'utente di avviare il processo di generazione delle raccomandazioni & Obbligatorio & UC13 \\
+\hline
+RF13.1 & L'interfaccia permette all'utente di visualizzare il progresso del processo di generazione delle raccomandazioni & Obbligatorio & UC13.1 \\
+\hline
+RF14 & L'interfaccia permette all'utente di visualizzare le raccomandazioni generate & Obbligatorio & UC14 \\
+\hline
+RF14.1 & L'interfaccia permette all'utente di visualizzare le raccomandazioni relative ad una singola traccia & Obbligatorio & UC14.1 \\
+\hline
+RF14.1.1 & L'interfaccia permette all'utente di visualizzare le raccomandazioni relative ad una singola traccia in formato testuale & Obbligatorio & UC14.1.1 \\
+\hline
+RF14.1.2 & L'interfaccia permette all'utente di visualizzare le raccomandazioni relative ad una singola traccia in formato grafico & Obbligatorio & UC14.1.2 \\
+\hline
+RF14.2 & L'interfaccia permette all'utente di riordinare l'insieme delle raccomandazioni generate & Obbligatorio & UC14.2 \\
+\hline
+RF15 & L'interfaccia permette all'utente di ricercare una traccia tramite id & Obbligatorio & UC15 \\
+\hline
+RF16 & L'interfaccia permette all'utente di ricercare una traccia tramite grafico & Obbligatorio & UC16 \\
+\hline
+RF17 & L'interfaccia permette all'utente di visualizzare le spiegazioni di una singola raccomandazione & Obbligatorio & UC17 \\
+\hline
+RF17.1 & L'interfaccia permette all'utente di selezionare l'attività raccomandata di cui vuole visualizzare la spiegazione & Obbligatorio & UC17.1 \\
+\hline
+RF17.2 & L'interfaccia permette all'utente di selezionare la qualtità di variabili che vuole visualizzare nella spiegazione & Obbligatorio & UC17.2 \\
+\hline
+RF17.3 & L'interfaccia permette all'utente di visualizzare la spiegazione in formato grafico & Obbligatorio & UC17.3 \\
+\hline
+RF17.4 & L'interfaccia permette all'utente di visualizzare dettagli testuali aggiuntivi per ogni singola variabile della spiegazione & Obbligatorio & UC17.4 \\
+\hline
+RF17.5 & L'interfaccia permette all'utente di riordinare le variabili della spiegazione  & Obbligatorio & UC17.5 \\
+\hline
+RF18 & L'interfaccia permette all'utente di definire il nome da dare all'esperimento effettuato  & Obbligatorio & UC18 \\
+\hline
+RF19 & L'interfaccia permette all'utente caricare nel sistema un modello già allenato in precedenza  & Obbligatorio & UC19 \\
+\hline
+\hline
+\caption{Tabella del tracciamento dei requisti funzionali}
+\end{longtable}
+%\end{table}
+
+
+
+\begin{longtable}{cp{8cm}ll}
+\hline
+\hline
+\textbf{Requisito} & \textbf{Descrizione} &  \textbf{Rilevanza} & \textbf{Fonte}\\
+\hline
+RNF1 & L'interfaccia deve funzionare correttamente nelle ultime attuali versioni dei sistemi operativi Windows, MacOS e Ubuntu & Obbligatorio & Committente \\
+\hline
+RNF2 & L'interfaccia deve essere sviluppata usando il framework Dash & Obbligatorio & Scelta interna \\
+\hline
+RNF3 & L'interfaccia deve essere sviluppata in modalità wizard (cioè una procedura step by step) & Obbligatorio & Committente \\
+\hline
+RNF4 & L'interfaccia deve poter essere utilizzata da più utenti indipendenti contemporaneamente & Desiderabile & D01 \\
+\hline
+RNF5 & Devono essere presenti test di unità per l'interfaccia grafica & Obbligatorio & O06 \\
+
+\hline
+\hline
+\caption{Tabella del tracciamento dei requisti non funzionali}
+\end{longtable}
