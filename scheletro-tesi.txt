@@ -31,6 +31,20 @@
     - Funzionamento del multi-utente
     - Presentazione delle varie "pagine" dell'app (con una screenshot) e le loro funzionalità 
 
+CODIFICA:
+- sviluppo modalità wizard (immagine, come funziona)
+- sviluppo pagina training (immagine pagina senza niente caricato, immagine pagina con qualcosa di caricato, immagine modello già caricato, immagine pagina con processo di trainign avviato). da parlare della necessita di cambiare componennte pe caricare i file, di come funziona la selezione colonne (con bottoni per far seguire il flusso) e come è stato implemetato il tracciamento del porgresso del training.
+
+- sviluppo pagina runtime (immagine con ninete caricato, immagine con quelcosa di cariacto immagine durate il progesso delle raccomandazioni). da ossrvare come è stato traccaato il progresso.
+
+-sviluppo pag visualizzazione (immagine normale appena entrato, immagine conquaklcosa di selelzionato, immagine con psiiegazioni)
+da aprlare della paginazione e di come funziona, del click sulla tabella (spiega cosa mostra) e come funzionanao le spiegazioni
+
+modifiche comuni (uso di backgoung callback e quinid l uso di gif sui bottoni per l'attesa)
+
+spiegare come è stato fatto il multiutente. 
+
+
 6) Verifica e validazione
     - Approccio ai test e librerie usate
 

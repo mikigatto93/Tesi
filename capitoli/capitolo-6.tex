@@ -4,5 +4,67 @@
 
 %**************************************************************
 \chapter{Verifica e validazione}
-\label{cap:verifica-validazione}
+\label{cap6}
 %**************************************************************
+
+\section{Attività di verifica}
+\subsection{Test di unità}
+Durante l'attività di codifica sono stati sviluppati vari test di unità per verificare il funzionamento del sistema sviluppato. Con test di unità si intende l'attività di collaudo effettuata su una singola unità del software. La definizione di unità è variabile a seconda dei bisogni di progetto, ad esempio: una singola funzione, un singolo componente, una singola classe.
+Nel caso del progetto in questione, l'unità viene intesa come una singola funzione.
+\\
+In accordo con il committente si è deciso di testare l'intero componente Presenter, quindi tutte le callback, e le sole parti del componente Model prettamente relative al funzionamento dell'interfaccia grafica. Infatti, il testing dei metodi relativi al sistema di raccomandazione sottostante (i metodi che rappresentano il \gls{porting} del sistema di raccomandazione originale) è stato considerato al di fuori della portata dello stage.
+Similmente, è stato deciso di non scrivere test di unità per il componente View. Per questo, essendo un componente passivo e definito in maniera puramente dichiarativa, è bastata la conferma visuale che la componente grafica seguisse quanto progettato nei \gls{mock up}.
+\\ \\
+La libreria utilizzata per effettuare i test di unità è \texttt{dash.testing} \cite{site:dash-testing}.
+
+\subsection{Test di integrazione}
+I test di integrazione sono quelle attività di collaudo che verificano il funzionamento di più unità, moduli o componenti nel loro insieme. In relazione ai test di unità essi vengono effettuati successivamente e impiegano più risorse (tempo di sviluppo e tempo di esecuzione) per essere svolti, per questo sono meno numerosi.
+\\
+Per il progetto in questione, i testi di integrazione sono stati sfruttati per verificare l'interazione tra pagine. In particolare sono state verificate le condizioni che permettono, o impediscono, il passaggio da una pagina alla successiva o precedente. Inoltre sono state verificate le condizioni che determinano la disabilitazione o abilitazione dei controlli dell'interfaccia.
+\\
+In questo caso, per lo sviluppo dei test di integrazione, sono stati usati due strumenti: la libreria \texttt{dash.testing} e Selenium WebDriver \cite{site:selenium} per l'automazione del browser. 
+
+
+\subsection{Test di sistema}
+Infine sono stati sviluppati test di sistema. Essi sono quelle attività di verifica e collaudo effettuate nel sistema completo e hanno lo scopo di valutare e dimostrare la conformità del sistema in relazione ai requisisti definiti.
+\\
+Nel caso del progetto di stage, essi sono stati effettuati, insieme al committente, facendo due esecuzioni complete su due event log differenti:
+
+\begin{itemize}
+\item \textbf{Bank Account Closure} (BAC): rappresenta un log relativa alla gestione del processo di chiusura di conti bancari di un sistema bancario italiano;
+
+\item \textbf{VINST}: rappresenta un log usato nella BPI challenge del 2013, fornito dalla Volvo Belgium e contiene eventi relativi ad un sistema di gestione incidenti chiamato VINST.
+
+\end{itemize}
+Gli event log necessari sono stati forniti dal committente.
+Per una definizione più dettagliata e per la spiegazione di come sono stati generati gli event log per la fase runtime ci si riferisce a \cite{paper-padella}.
+
+\section{Validazione}
+Al termine dell'esperienza di stage è stata verificata la copertura dei requisiti definiti nel \autoref{cap4}.
+Essa si è rivelata totale ed il prodotto è stato considerato soddisfacente da parte del committente.
+
+\begin{longtable}{cp{3cm}p{3cm}c}
+\hline
+\hline
+\textbf{Tipo requisito} & \textbf{Coperti} &  \textbf{Totali} & \textbf{Percentuale copertura}\\
+\hline
+Funzionali & 41 & 41 & 100\% \\
+\hline
+Non Funzionali & 7 & 7 & 100\% \\
+
+\hline
+\hline
+\caption{Tabella validazione dei requisiti}
+\end{longtable}
+
+
+
+
+
+
+
+
+
+
+
+
